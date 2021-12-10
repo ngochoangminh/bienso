@@ -1,0 +1,3 @@
+docker build -t i-dsserver:version1 -f Dockerfile .
+
+docker run --gpus all -itd --ipc=host --name DS5 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v /home/ngoc/deepstream5/:/project -w /opt/nvidia/deepstream/deepstream-5.1/sources/apps/sample_apps/  dsserver:version1
